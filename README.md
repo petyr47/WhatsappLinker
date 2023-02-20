@@ -8,10 +8,9 @@ The idea was to show a notification whenever a number is copied(added to clipboa
 
 ## TODO
 
-- [ ] Add a better means of recongising string as a phone number
+- [ ] Add a better means of recognising string as a phone number
 - [ ] Add Setup for more localities other than Nigeria
-- [ ] Monitor Clipboard, if possible
-- [ ] Show notification when number copied
+- [ ] Add Tests
 - [x] Add app to telephone action intent app chooser
 
 Feel free to make a PR to this repository if you can complete any of these tasks or add support for a new nationality
