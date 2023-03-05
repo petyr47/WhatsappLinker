@@ -8,8 +8,8 @@ The idea was to show a notification whenever a number is copied(added to clipboa
 
 ## TODO
 
-- [ ] Add a better means of recognising string as a phone number
-- [ ] Add Setup for more localities other than Nigeria
+- [x] Add a better means of recognising string as a phone number
+- [x] Add Setup for more localities other than Nigeria
 - [ ] Add Tests
 - [x] Add app to telephone action intent app chooser
 
