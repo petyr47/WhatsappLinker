@@ -5,6 +5,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.aneke.peter.whatsapplinker.databinding.ActivityMainBinding
@@ -22,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         binding.viewModel = mainViewModel
 
-
         val number = intent.dataString?.replace("tel:", "")?.trim()
         if (!number.isNullOrBlank()) {
             mainViewModel.phoneNumber.value = number
@@ -30,18 +30,21 @@ class MainActivity : AppCompatActivity() {
 
         binding.linkText.setOnClickListener {
             val defaultBrowser = Intent(Intent.ACTION_VIEW)
-            defaultBrowser.data = Uri.parse(mainViewModel.link.value)
+            defaultBrowser.data = Uri.parse(mainViewModel.link)
             startActivity(defaultBrowser)
         }
 
-        mainViewModel.link.observe(this) {
-            if (it.isNullOrBlank()){
-                binding.linkText.visibility = View.GONE
-            } else {
+        binding.ccp.registerCarrierNumberEditText(binding.textInput)
+
+        binding.ccp.setPhoneNumberValidityChangeListener { isValid ->
+            if (isValid) {
                 binding.linkText.visibility = View.VISIBLE
+                mainViewModel.phoneNumber.value = binding.ccp.fullNumber
+                mainViewModel.link = makeWhatsappUrl(binding.ccp.fullNumber)
+            } else {
+                binding.linkText.visibility = View.GONE
             }
         }
     }
-
 
 }
