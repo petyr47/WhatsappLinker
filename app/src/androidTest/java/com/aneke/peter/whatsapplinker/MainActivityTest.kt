@@ -1,7 +1,6 @@
 package com.aneke.peter.whatsapplinker
 
 import android.content.Intent
-import androidx.test.core.app.launchActivity
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.closeSoftKeyboard

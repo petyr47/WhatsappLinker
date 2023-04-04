@@ -1,7 +1,7 @@
 package com.aneke.peter.whatsapplinker
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import getOrAwaitValue
+import com.aneke.peter.whatsapplinker.util.getOrAwaitValue
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
