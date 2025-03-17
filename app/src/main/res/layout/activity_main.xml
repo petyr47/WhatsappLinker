@@ -53,7 +53,7 @@
             app:layout_constraintStart_toEndOf="@+id/ccp"
             app:layout_constraintTop_toBottomOf="@+id/title" />
 
-        <com.google.android.material.button.MaterialButton
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/link_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,8 +62,25 @@
             android:padding="8dp"
             android:text="@string/open_in_whatsapp"
             android:textSize="16sp"
+            app:icon="@drawable/outline_share"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInput" />
+            app:layout_constraintTop_toBottomOf="@+id/textInput"
+            />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/copy_link_btn"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/copy_link"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:padding="8dp"
+            android:textSize="16sp"
+            app:icon="@drawable/outline_copy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/link_text"
+            />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
